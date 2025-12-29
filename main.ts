@@ -103,7 +103,7 @@ namespace nezhaV2 {
     }
 
     //% group="Basic functions"
-    //% block="Όρισε %motor στο %speed\\%to με περιστροφή %direction %value %mode || %isDelay"
+    //% block="Όρισε %motor στο %speed\\%to %direction %value %mode || %isDelay"
     //% inlineInputMode=inline
     //% speed.min=0  speed.max=100
     //% weight=407 
@@ -136,7 +136,7 @@ namespace nezhaV2 {
 
     //% group="Basic functions"
     //% weight=406
-    //% block="Όρισε %motor σε rotate %turnMode σε γωνία %angle || %isDelay  "
+    //% block="Όρισε %motor  %turnMode σε γωνία %angle || %isDelay  "
     //% angle.min=0  angle.max=359
     //% inlineInputMode=inline
     export function moveToAbsAngle(motor: MotorPostion, turnMode: ServoMotionMode, angle: number, isDelay: DelayMode = DelayMode.AutoDelayStatus): void {
