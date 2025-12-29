@@ -1,7 +1,7 @@
 {
     "name": "pxt-nezha2",
     "version": "1.2.0",
-    "description": "micro:bit NezhaV2 Gr",
+    "description": "STEM Education NezhaV2 Gr",
     "license": "MIT",
     "dependencies": {
         "core": "*"
