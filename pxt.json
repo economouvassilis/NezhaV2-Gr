@@ -15,6 +15,7 @@
         "_locales/zh/pxt-nezha2-jsdoc-strings.json",
         "_locales/ko/pxt-nezha2-strings.json"
     ],
+    "icon": "nezha_v2.png",
     "testFiles": [
         "test.ts"
     ],
