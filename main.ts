@@ -422,6 +422,10 @@ namespace nezhaV2 {
 
 
 
+
+
+
+
 /**
 * Functions to PlanetX sensor by ELECFREAKS Co.,Ltd.
 */
@@ -1527,18 +1531,18 @@ namespace PlanetX_Basic {
         Four = 3
     }
     export enum TrackBit_gray {
-        //% block="line"
+        //% block="γραμμή"
         One = 0,
-        //% block="background"
+        //% block="φόντο"
         Two = 4
     }
 
 
     export enum Distance_Unit_List {
-        //% block="cm" 
+        //% block="εκατοστά" 
         Distance_Unit_cm,
 
-        //% block="foot"
+        //% block="πόδια"
         Distance_Unit_foot,
     }
     export enum ButtonStateList {
@@ -1557,69 +1561,69 @@ namespace PlanetX_Basic {
         Off
     }
     export enum BME280_state {
-        //% block="temperature(℃)"
+        //% block="Θερμοκρασία(℃)"
         BME280_temperature_C,
 
-        //% block="humidity(0~100)"
+        //% block="υγρασία(0~100)"
         BME280_humidity,
 
-        //% block="pressure(hPa)"
+        //% block="πίεση(hPa)"
         BME280_pressure,
 
-        //% block="altitude(M)"
+        //% block="υψόμετρο(M)"
         BME280_altitude,
     }
     export enum DHT11_state {
-        //% block="temperature(℃)" enumval=0
+        //% block="θερμοκρασία(℃)" enumval=0
         DHT11_temperature_C,
 
-        //% block="humidity(0~100)" enumval=1
+        //% block="υγρασία(0~100)" enumval=1
         DHT11_humidity,
     }
     export enum DHT20_state {
-        //% block="temperature(℃)" enumval=0
+        //% block="θερμοκρασία(℃)" enumval=0
         DHT20_temperature_C,
 
-        //% block="humidity(0~100)" enumval=1
+        //% block="υγρασία(0~100)" enumval=1
         DHT20_humidity,
     }
 
     export enum GestureType {
-        //% block="None"
+        //% block="Κανένα"
         None = 0,
-        //% block="Right"
+        //% block="δεξιά"
         Right = 1,
-        //% block="Left"
+        //% block="αριστερα"
         Left = 2,
-        //% block="Up"
+        //% block="πάνω"
         Up = 3,
-        //% block="Down"
+        //% block="κάτω"
         Down = 4,
-        //% block="Forward"
+        //% block="μπροστά"
         Forward = 5,
-        //% block="Backward"
+        //% block="πίσω"
         Backward = 6,
-        //% block="Clockwise"
+        //% block="δεξιόστροφα"
         Clockwise = 7,
-        //% block="Anticlockwise"
+        //% block="αριστερόστροφα"
         Anticlockwise = 8,
-        //% block="Wave"
+        //% block="κυματιστά"
         Wave = 9
     }
     export enum ColorList {
-        //% block="Red"
+        //% block="κόκκινο"
         red,
-        //% block="Green"
+        //% block="πράσινο"
         green,
-        //% block="Blue"
+        //% block="μπλε"
         blue,
-        //% block="Cyan"
+        //% block="θαλασσί"
         cyan,
-        //% block="Magenta"
+        //% block="μωβ"
         magenta,
-        //% block="Yellow"
+        //% block="κίτρινο"
         yellow,
-        //% block="White"
+        //% block="λευκό"
         white
     }
 
@@ -1658,14 +1662,14 @@ namespace PlanetX_Basic {
     }
 
     export enum joykeyEnum {
-        //% block="pressed"
+        //% block="πατημένο"
         pressed = 1,
-        //% block="unpressed"
+        //% block="απάτητο"
         unpressed = 0
     }
 
     ///////////////////////////////////blocks/////////////////////////////
-    //% blockId="readnoise" block="Noise sensor %Rjpin loudness(dB)"
+    //% blockId="readnoise" block="Αισθητήρας θορύβου %Rjpin ένταση(dB)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -1774,7 +1778,7 @@ namespace PlanetX_Basic {
         noise = Math.round(noise)
         return Math.round(noise)
     }
-    //% blockId="lightSensor" block="Light sensor %Rjpin light intensity(lux)"
+    //% blockId="lightSensor" block="Αισθητήρας φωτός %Rjpin light ένταση(lux)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -1797,7 +1801,7 @@ namespace PlanetX_Basic {
         }
         return Math.round(voltage)
     }
-    //% blockId="readsoilmoisture" block="Soil moisture sensor %Rjpin value(0~100)"
+    //% blockId="readsoilmoisture" block="αισθητήρας υγρασίας υγρού %Rjpin τιμή(0~100)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -1838,7 +1842,7 @@ namespace PlanetX_Basic {
         return Math.round(waterlevel)
     }
 
-    //% blockId="readUVLevel" block="UV sensor %Rjpin level(0~15)"
+    //% blockId="readUVLevel" block="Αισθητήρας UV %Rjpin επίπεδο(0~15)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -1858,7 +1862,7 @@ namespace PlanetX_Basic {
         );
         return Math.round(UVlevel)
     }
-    //% blockId="gasValue" block="%sensor Gas sensor %Rjpin concentration value"
+    //% blockId="gasValue" block="%sensor Αισθητήρας αερίου %Rjpin τιμή συγκέντρωσης"
     //% Rjpin.fieldEditor="gridpicker" Rjpin.fieldOptions.columns=2
     //% sensor.fieldEditor="gridpicker" sensor.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -1871,7 +1875,7 @@ namespace PlanetX_Basic {
         return pins.analogReadPin(pin)
     }
 
-    //% blockId=Crash block="Crash Sensor %Rjpin is pressed"
+    //% blockId=Crash block="Αισθητήρας σύγκρουσης %Rjpin πιέζεται"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor group="Digital" color=#EA5532 
@@ -1889,7 +1893,7 @@ namespace PlanetX_Basic {
 
     let distance_last = 0
 
-    //% blockId=sonarbit block="Ultrasonic sensor %Rjpin distance %distance_unit"
+    //% blockId=sonarbit block="Αισθητήρας Ultrasonic %Rjpin απόσταση σε %distance_unit"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% distance_unit.fieldEditor="gridpicker"
@@ -1955,7 +1959,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% blockId="PIR" block="PIR sensor %Rjpin detects motion"
+    //% blockId="PIR" block="Αισθητήρας PIR %Rjpin ανιχνεύει κίνηση"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor group="Digital"  color=#EA5532
@@ -1970,7 +1974,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% blockId="PM25" block="PM2.5 sensor %Rjpin value (μg/m³)"
+    //% blockId="PM25" block="Αισθητήρας PM2.5 %Rjpin τιμή (μg/m³)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor group="Digital" color=#EA5532
@@ -1989,7 +1993,7 @@ namespace PlanetX_Basic {
         return pm25
     }
 
-    //% blockId="readdust" block="Dust sensor %Rjpin value (μg/m³)"
+    //% blockId="readdust" block="Αισθητήρας σκόνης %Rjpin τιμή (μg/m³)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -2032,7 +2036,7 @@ namespace PlanetX_Basic {
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor group="Digital" color=#EA5532
-    //% blockId=tracking_sensor block="Line-tracking sensor %Rjpin is %state"
+    //% blockId=tracking_sensor block="Αισθητήρας παρακολούθησης γραμμής %Rjpin είναι %state"
     export function trackingSensor(Rjpin: DigitalRJPin, state: TrackingStateType): boolean {
         let lpin = DigitalPin.P1
         let rpin = DigitalPin.P2
@@ -2074,7 +2078,7 @@ namespace PlanetX_Basic {
     */
     //% channel.fieldEditor="gridpicker" channel.fieldOptions.columns=4
     //% subcategory=Sensor group="IIC Port"
-    //% block="Trackbit channel %channel gray value"
+    //% block="Κανάλι Trackbit %channel τιμή γκρι"
     export function TrackbitgetGray(channel: TrackbitChannel): number {
         pins.i2cWriteNumber(0x1a, channel, NumberFormat.Int8LE)
         return pins.i2cReadNumber(0x1a, NumberFormat.UInt8LE, false)
