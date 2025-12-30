@@ -1671,7 +1671,7 @@ namespace PlanetX_Basic {
 
 
     ///////////////////////////////////blocks/////////////////////////////
-    //% blockId="readnoise" block="Αισθητήρας θορύβου %Rjpin ένταση(dB)"
+    //% blockId="readnoise" block="Τιμή από αισθητήρα θορύβου %Rjpin ένταση(dB)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -1780,7 +1780,7 @@ namespace PlanetX_Basic {
         noise = Math.round(noise)
         return Math.round(noise)
     }
-    //% blockId="lightSensor" block="Αισθητήρας φωτός %Rjpin light ένταση(lux)"
+    //% blockId="lightSensor" block="Τιμή από αισθητήρα φωτός %Rjpin ένταση(lux)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -1803,7 +1803,7 @@ namespace PlanetX_Basic {
         }
         return Math.round(voltage)
     }
-    //% blockId="readsoilmoisture" block="αισθητήρας υγρασίας υγρού %Rjpin τιμή(0~100)"
+    //% blockId="readsoilmoisture" block="Τιμή από αισθητήρα υγρασίας %Rjpin (0~100)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -1822,7 +1822,7 @@ namespace PlanetX_Basic {
         return Math.round(soilmoisture);
     }
 
-    //% blockId="readwaterLevel" block="Water level sensor %Rjpin value(0~100)"
+    //% blockId="readwaterLevel" block="Τιμή από αισθητήρα στάθμης νερού %Rjpin (0~100)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -1895,7 +1895,7 @@ namespace PlanetX_Basic {
 
     let distance_last = 0
 
-    //% blockId=sonarbit block="Απόσταση σε %distance_unit από αισθητήρα Ultrasonic %Rjpin "
+    //% blockId=sonarbit block="Απόσταση από αισθητήρα Ultrasonic σε %distance_unit %Rjpin "
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% distance_unit.fieldEditor="gridpicker"
