@@ -279,7 +279,7 @@ namespace nezhaV2 {
 
     //% group="Basic functions"
     //% weight=399
-    //%block="Όρισε servo %motor σε γωνία σε σχέση με το μηδέν"
+    //%block="Όρισε servo %motor γωνία σε με το μηδέν"
     export function resetRelAngleValue(motor: MotorPostion) {
         relativeAngularArr[motor - 1] = readAngle(motor);
     }
@@ -351,7 +351,7 @@ namespace nezhaV2 {
 
     //% group="Application functions"
     //% weight=403
-    //%block="Συνδυασμός κινητήρα με %speed σε κατευύυνση %direction %value %uint "
+    //%block="Συνδυασμός κινητήρα με ταχύτητα %speed \\%, κατεύθυνση %direction γωνία %value %uint "
     //% speed.min=0  speed.max=100
     //% inlineInputMode=inline
     export function comboMove(speed: number, direction: VerticallDirection, value: number, uint: DistanceAndAngleUnit): void {
@@ -417,6 +417,11 @@ namespace nezhaV2 {
         return `V ${version[0]}.${version[1]}.${version[2]}`;
     }
 }
+
+
+
+
+
 
 
 
@@ -4422,6 +4427,8 @@ namespace PlanetX_Display {
         }
     }
     
+
+
     //% shim=light::sendWS2812Buffer
     declare function displaySendBuffer(buf: Buffer, pin: DigitalPin): void;
     
