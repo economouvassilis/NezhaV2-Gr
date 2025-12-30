@@ -103,7 +103,7 @@ namespace nezhaV2 {
     }
 
     //% group="Basic functions"
-    //% block="Όρισε %motor στο %speed\\%to %direction %value %mode || %isDelay"
+    //% block="Όρισε %motor στο %speed\\% %direction %value %mode || %isDelay"
     //% inlineInputMode=inline
     //% speed.min=0  speed.max=100
     //% weight=407 
