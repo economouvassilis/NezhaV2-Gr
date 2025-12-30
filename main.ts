@@ -4444,6 +4444,7 @@ namespace PlanetX_Display {
     
 
 
+    
     //% shim=light::sendWS2812Buffer
     declare function displaySendBuffer(buf: Buffer, pin: DigitalPin): void;
     
@@ -4461,7 +4462,7 @@ namespace PlanetX_Display {
          * Shows all LEDs to a given color (range 0-255 for r, g, b).
          * @param rgb RGB color of the LED
          */
-        //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors"
+        //% blockId="neopixel_set_strip_color" block="%strip|πρόβαλε χρώμα %rgb=neopixel_colors"
         //% weight=85 color=#EA5532
         //% parts="neopixel" subcategory=Neopixel
         showColor(rgb: number) {
@@ -4475,7 +4476,7 @@ namespace PlanetX_Display {
          * @param startHue the start hue value for the rainbow, eg: 1
          * @param endHue the end hue value for the rainbow, eg: 360
          */
-        //% blockId="neopixel_set_strip_rainbow" block="%strip|show rainbow from %startHue|to %endHue"
+        //% blockId="neopixel_set_strip_rainbow" block="%strip|πρόβαλε χρώματα από %startHue|σε %endHue"
         //% weight=85 color=#EA5532
         //% parts="neopixel" subcategory=Neopixel
         showRainbow(startHue: number = 1, endHue: number = 360) {
@@ -4541,7 +4542,7 @@ namespace PlanetX_Display {
          * @param pixeloffset position of the NeoPixel in the strip
          * @param rgb RGB color of the LED
          */
-        //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors"
+        //% blockId="neopixel_set_pixel_color" block="%strip|όρισε χρώμα σε %pixeloffset|στο %rgb=neopixel_colors"
         //% weight=80 color=#EA5532
         //% parts="neopixel" subcategory=Neopixel
         setPixelColor(pixeloffset: number, rgb: number): void {
@@ -4551,7 +4552,7 @@ namespace PlanetX_Display {
         /**
          * Send all the changes to the strip.
          */
-        //% blockId="neopixel_show" block="%strip|show" 
+        //% blockId="neopixel_show" block="%strip|προβολή" 
         //% weight=79
         //% parts="neopixel" subcategory=Neopixel
         show() {
@@ -4562,7 +4563,7 @@ namespace PlanetX_Display {
          * Turn off all LEDs.
          * You need to call ``show`` to make the changes visible.
          */
-        //% blockId="neopixel_clear" block="%strip|clear"
+        //% blockId="neopixel_clear" block="%strip|καθαρισμός"
         //% weight=76 color=#EA5532
         //% parts="neopixel" subcategory=Neopixel
         clear(): void {
@@ -4574,7 +4575,7 @@ namespace PlanetX_Display {
          * Set the brightness of the strip. This flag only applies to future operation.
          * @param brightness a measure of LED brightness in 0-255. eg: 255
          */
-        //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" 
+        //% blockId="neopixel_set_brightness" block="%strip|όρισε φωτεινότητα %brightness" 
         //% weight=59 color=#EA5532
         //% parts="neopixel" subcategory=Neopixel
         setBrightness(brightness: number): void {
@@ -4699,7 +4700,7 @@ namespace PlanetX_Display {
      * @param pin the pin where the neopixel is connected.
      * @param numleds number of leds in the strip, eg: 24,30,60,64
      */
-    //% blockId="neopixel_create" block="NeoPixel at pin %Rjpin|with %numleds|leds as %mode"
+    //% blockId="neopixel_create" block="NeoPixel στον ακροδέκτη %Rjpin|με %numleds|leds ως %mode"
     //% weight=90 color=#EA5532
     //% parts="neopixel"
     //% trackArgs=0,2
@@ -4739,7 +4740,7 @@ namespace PlanetX_Display {
      * @param blue value of the blue channel between 0 and 255. eg: 255
      */
     //% weight=1 subcategory=Neopixel color=#EA5532
-    //% blockId="neopixel_rgb" block="red %red|green %green|blue %blue"
+    //% blockId="neopixel_rgb" block="κόκκινο %red|πράσινο %green|μπλε %blue"
     export function rgb(red: number, green: number, blue: number): number {
         return packRGB(red, green, blue);
     }
@@ -4769,13 +4770,17 @@ namespace PlanetX_Display {
         return b;
     }
 
+
+
+
+
     /**
      * Converts a hue saturation luminosity value into a RGB color
      * @param h hue from 0 to 360
      * @param s saturation from 0 to 99
      * @param l luminosity from 0 to 99
      */
-    //% blockId=neopixelHSL block="hue %h|saturation %s|luminosity %l" subcategory=Neopixel color=#EA5532
+    //% blockId=neopixelHSL block="Απόχρωση %h|κορεσμός %s|φωτεινότητα %l" υποκατηγορία=Neopixel color=#EA5532
     export function hsl(h: number, s: number, l: number): number {
         h = Math.round(h);
         s = Math.round(s);
@@ -4838,6 +4843,16 @@ namespace PlanetX_Display {
         Shortest
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4945,7 +4960,7 @@ namespace PlanetX_IOT {
     /**
      * Initialize ESP8266 module
      */
-    //% block="set wifi module %Rjpin Baud rate %baudrate"
+    //% block="Όρισε στο wifi module %Rjpin Baud rate %baudrate"
     //% ssid.defl=your_ssid
     //% pw.defl=your_password weight=100
     //% color=#EA5532
@@ -4980,7 +4995,7 @@ namespace PlanetX_IOT {
     /**
      * connect to Wifi router
      */
-    //% block="connect Wifi SSID = %ssid|KEY = %pw"
+    //% block="SSID σύνδεσης Wifi = %ssid|KEY = %pw"
     //% ssid.defl=your_ssid
     //% pw.defl=your_pwd weight=95
     //% color=#EA5532
@@ -5003,13 +5018,21 @@ namespace PlanetX_IOT {
      * Warning: Deprecated.
      * Check if ESP8266 successfully connected to Wifi
      */
-    //% block="Wifi connected %State" weight=70
+    //% block="Κατάσταση σύνδεσης Wifi %State" weight=70
     //% color=#EA5532
     export function wifiState(state: boolean) {
         return wifi_connected === state
     }
 
 }
+
+
+
+
+
+
+
+
 /************************************************************************
  * MQTT
  ************************************************************************/
@@ -5034,6 +5057,10 @@ namespace PlanetX_IOT {
     let mqtt_connected: boolean = false
     const mqtt_subHandlers: { [topic: string]: (message: string) => void } = {}
     const mqtt_subQos: { [topic: string]: number } = {}
+
+
+
+
 
 
     /*----------------------------------MQTT-----------------------*/
@@ -5120,6 +5147,12 @@ namespace PlanetX_IOT {
 
 }
 
+
+
+
+
+
+
 /************************************************************************
  * thingspeak
  ************************************************************************/
@@ -5134,7 +5167,7 @@ namespace PlanetX_IOT {
     /**
      * Connect to ThingSpeak
      */
-    //% block="connect thingspeak"
+    //% block="Σύνδεση με Τhingspeak"
     //% write_api_key.defl=your_write_api_key
     //% subcategory="ThingSpeak" weight=90
     //% color=#EA5532
@@ -5145,7 +5178,7 @@ namespace PlanetX_IOT {
     /**
      * Connect to ThingSpeak and set data.
      */
-    //% block="set data to send ThingSpeak | Write API key = %write_api_key|Field 1 = %n1||Field 2 = %n2|Field 3 = %n3|Field 4 = %n4|Field 5 = %n5|Field 6 = %n6|Field 7 = %n7|Field 8 = %n8"
+    //% block="Όρισε δεδομένα για αποστολή στο ThingSpeak | Write API key = %write_api_key|Field 1 = %n1||Field 2 = %n2|Field 3 = %n3|Field 4 = %n4|Field 5 = %n5|Field 6 = %n6|Field 7 = %n7|Field 8 = %n8"
     //% write_api_key.defl=your_write_api_key
     //% expandableArgumentMode="enabled"
     //% subcategory="ThingSpeak" weight=85
@@ -5175,7 +5208,7 @@ namespace PlanetX_IOT {
     /**
      * upload data. It would not upload anything if it failed to connect to Wifi or ThingSpeak.
      */
-    //% block="Upload data to ThingSpeak"
+    //% block="Αποστολή δεδομένων στο ThingSpeak"
     //% subcategory="ThingSpeak" weight=80
     //% color=#EA5532
     export function uploadData() {
@@ -5186,7 +5219,7 @@ namespace PlanetX_IOT {
     /*
      * Check if ESP8266 successfully connected to ThingSpeak
      */
-    //% block="ThingSpeak connected %State"
+    //% block="Κατάσταση σύνδεσης με ThingSpeak %State"
     //% subcategory="ThingSpeak" weight=65
     //% color=#EA5532
     export function thingSpeakState(state: boolean) {
@@ -5194,6 +5227,12 @@ namespace PlanetX_IOT {
     }
 
 }
+
+
+
+
+
+
 
 
 /************************************************************************
