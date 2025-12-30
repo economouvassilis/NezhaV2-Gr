@@ -3773,7 +3773,20 @@ namespace PlanetX_Basic {
         return 32.6;
     }
 
-/**
+
+}
+
+
+
+
+
+
+
+
+
+
+
+    /**
 * Functions to PlanetX sensor by ELECFREAKS Co.,Ltd.
 */
 //% color=#EA5532 icon="\uf110" block="PlanetX_Display" blockId="PlanetX_Display" 
@@ -4255,12 +4268,14 @@ namespace PlanetX_Display {
         //oledcmd(DISPLAY_ON);    //display on
         setText(0, 0);
     }
+   
+   
     /**
    * Create a new driver Grove - 4-Digit Display
    * @param clkPin value of clk pin number
    * @param dataPin value of data pin number
    */
-    //% blockId=grove_tm1637_create block="σύνδεση οθόνης τεσσάρων ψηφίων |στο %pin|"
+    //% blockId=grove_tm1637_create block="Σύνδεση οθόνης τεσσάρων ψηφίων |στο %pin|"
     //% subcategory=Display group="7-Seg 4-Dig LED Nixietube" blockSetVariable=display color=#EA5532
     export function tm1637Create(Rjpin: DigitalRJPin, intensity: number = 7, count: number = 4): TM1637LEDs {
         let display = new TM1637LEDs();
@@ -4827,6 +4842,3 @@ namespace PlanetX_Display {
 
 
 
-
-
-}
