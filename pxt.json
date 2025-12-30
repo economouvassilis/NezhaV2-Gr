@@ -1,7 +1,7 @@
 {
     "name": "pxt-nezhaV2_Elecfreaks_Gr",
     "version": "1.0.0",
-    "description": "STEM Education NezhaV2+Elecfreaks Gr",
+    "description": "STEM Education NezhaV2 και Elecfreaks Gr",
     "license": "MIT",
     "dependencies": {
         "core": "*"
