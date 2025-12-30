@@ -1981,7 +1981,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% blockId="PM25" block="Αισθητήρας PM2.5 %Rjpin τιμή (μg/m³)"
+    //% blockId="PM25" block="Τιμή από Αισθητήρα PM2.5 %Rjpin  (μg/m³)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor group="Digital" color=#EA5532
@@ -2000,7 +2000,7 @@ namespace PlanetX_Basic {
         return pm25
     }
 
-    //% blockId="readdust" block="Αισθητήρας σκόνης %Rjpin τιμή (μg/m³)"
+    //% blockId="readdust" block="Τιμή από αισθητήρα σκόνης %Rjpin (μg/m³)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -2766,7 +2766,7 @@ namespace PlanetX_Basic {
     }
 
     //% deprecated=true
-    //% block="τιμή από joystick %state"
+    //% block="Τιμή από joystick %state"
     //% state.fieldEditor="gridpicker"
     //% state.fieldOptions.columns=2
     //% subcategory=Sensor group="IIC Port"
@@ -3705,10 +3705,10 @@ namespace PlanetX_Basic {
     let lastTemp = 0
 
     export enum ValType {
-        //% block="temperature(℃)" enumval=0
+        //% block="Θερμοκρασία (℃)" enumval=0
         DS18B20_temperature_C,
 
-        //% block="temperature(℉)" enumval=1
+        //% block="Θερμοκρασία (℉)" enumval=1
         DS18B20_temperature_F
     }
     function init_18b20(mpin: DigitalPin) {
@@ -3751,7 +3751,7 @@ namespace PlanetX_Basic {
     }
 
     //% subcategory=Sensor group="Digital" color=#EA5532
-    //% block="τιμή του DS18B20 %state στον ακροδέκτη %Rjpin"
+    //% block="Τιμή από DS18B20 %state στον ακροδέκτη %Rjpin"
     export function Ds18b20Temp(Rjpin: DigitalRJPin, state: ValType): number {
         let pin = RJpin_to_digital(Rjpin);
         let temperature = celsius(pin);
