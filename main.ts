@@ -1632,25 +1632,25 @@ namespace PlanetX_Basic {
         Co,
         //% block="Co2"
         Co2,
-        //% block="Smoke"
+        //% block="Καπνός"
         Smoke,
-        //% block="Alcohol"
+        //% block="Αλκοόλ"
         Alcohol
     }
     export enum DataUnit {
-        //% block="Year"
+        //% block="Έτος"
         Year,
-        //% block="Month"
+        //% block="Μήνας"
         Month,
-        //% block="Day"
+        //% block="Ημέρα"
         Day,
-        //% block="Weekday"
+        //% block="Ημέρα εβδομάδας"
         Weekday,
-        //% block="Hour"
+        //% block="Ώρα"
         Hour,
-        //% block="Minute"
+        //% block="Λεπτό"
         Minute,
-        //% block="Second"
+        //% block="Δευτερόλεπτο"
         Second
     }
 
@@ -1667,6 +1667,8 @@ namespace PlanetX_Basic {
         //% block="απάτητο"
         unpressed = 0
     }
+
+
 
     ///////////////////////////////////blocks/////////////////////////////
     //% blockId="readnoise" block="Αισθητήρας θορύβου %Rjpin ένταση(dB)"
@@ -1862,7 +1864,7 @@ namespace PlanetX_Basic {
         );
         return Math.round(UVlevel)
     }
-    //% blockId="gasValue" block="%sensor Αισθητήρας αερίου %Rjpin τιμή συγκέντρωσης"
+    //% blockId="gasValue" block="Τιμή συγκέντρωσης %sensor από αισθητήρα αερίου %Rjpin "
     //% Rjpin.fieldEditor="gridpicker" Rjpin.fieldOptions.columns=2
     //% sensor.fieldEditor="gridpicker" sensor.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -1875,7 +1877,7 @@ namespace PlanetX_Basic {
         return pins.analogReadPin(pin)
     }
 
-    //% blockId=Crash block="Αισθητήρας σύγκρουσης %Rjpin πιέζεται"
+    //% blockId=Crash block="Πιέζεται ο αισθητήρας σύγκρουσης %Rjpin "
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor group="Digital" color=#EA5532 
@@ -1893,7 +1895,7 @@ namespace PlanetX_Basic {
 
     let distance_last = 0
 
-    //% blockId=sonarbit block="Αισθητήρας Ultrasonic %Rjpin απόσταση σε %distance_unit"
+    //% blockId=sonarbit block="Απόσταση σε %distance_unit από αισθητήρα Ultrasonic %Rjpin "
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% distance_unit.fieldEditor="gridpicker"
@@ -1959,7 +1961,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% blockId="PIR" block="Αισθητήρας PIR %Rjpin ανιχνεύει κίνηση"
+    //% blockId="PIR" block="Ανιχνεύει κίνηση ο αισθητήρας PIR %Rjpin "
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor group="Digital"  color=#EA5532
@@ -2036,7 +2038,7 @@ namespace PlanetX_Basic {
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor group="Digital" color=#EA5532
-    //% blockId=tracking_sensor block="Αισθητήρας παρακολούθησης γραμμής %Rjpin είναι %state"
+    //% blockId=tracking_sensor block="Ο αισθητήρας παρακολούθησης γραμμής %Rjpin είναι %state"
     export function trackingSensor(Rjpin: DigitalRJPin, state: TrackingStateType): boolean {
         let lpin = DigitalPin.P1
         let rpin = DigitalPin.P2
@@ -2072,6 +2074,11 @@ namespace PlanetX_Basic {
             return true;
         } else return false;
     }
+
+
+
+
+
 
     /**
     * Get gray value.The range is from 0 to 255.
@@ -2177,7 +2184,7 @@ namespace PlanetX_Basic {
         while (input.runningTimeMicros() < time);
     }
 
-    //% blockId="readdht11" block="DHT11 sensor %Rjpin %dht11state value"
+    //% blockId="readdht11" block="Τιμή %dht11state από αισθητήρα DHT11 %Rjpin"
     //% Rjpin.fieldEditor="gridpicker" dht11state.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2 dht11state.fieldOptions.columns=1
     //% subcategory=Sensor group="Digital" color=#EA5532
@@ -2408,7 +2415,7 @@ namespace PlanetX_Basic {
     const gestureEventId = 3100;
     let lastGesture = GestureType.None;
     let paj7620 = new PAJ7620();
-    //% blockId= gesture_create_event block="Gesture sensor IIC port is %gesture"
+    //% blockId= gesture_create_event block="Η θύρα IIC του αισθητήρα χειρονομίας είναι %gesture"
     //% gesture.fieldEditor="gridpicker" gesture.fieldOptions.columns=3
     //% subcategory=Sensor group="IIC Port"
     export function onGesture(gesture: GestureType, handler: () => void) {
@@ -2429,7 +2436,7 @@ namespace PlanetX_Basic {
         })
     }
 
-    //% blockId= gesture_create_event block="onGestureInit"
+    //% blockId= gesture_create_event block="Στην έναρξη χειρονομίας"
     //% gesture.fieldEditor="gridpicker" gesture.fieldOptions.columns=3
     //% subcategory=Sensor group="IIC Port"
     function onGestureInit() {
@@ -2459,7 +2466,7 @@ namespace PlanetX_Basic {
         }
         return Math.round(retemp * 100) / 100
     }
-    //% blockId=apds9960_readcolor block="Color sensor IIC port color HUE(0~360)"
+    //% blockId=apds9960_readcolor block="Χρώμα από αισθητήρα χρώματος στη θύρα IIC HUE(0~360)"
     //% subcategory=Sensor group="IIC Port"
     export function readColor(): number {
         let buf = pins.createBuffer(2)
@@ -2561,7 +2568,7 @@ namespace PlanetX_Basic {
         }
         return hue
     }
-    //% block="Color sensor IIC port detects %color"
+    //% block="Ο αισθητήρας χρώματος στη θύρα IIC ανιχνεύει %color"
     //% subcategory=Sensor group="IIC Port"
     //% color.fieldEditor="gridpicker" color.fieldOptions.columns=3
     export function checkColor(color: ColorList): boolean {
@@ -2626,7 +2633,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% block="RFID sensor IIC port read data from card"
+    //% block="Ο αισθητήρα; RFID διαβάζει δεδομένα από την κάρτα στη Θύρα IIC"
     //% subcategory=Sensor group="IIC Port"
     export function readDataBlock(): string {
         if (NFC_ENABLE === 0) {
@@ -2669,7 +2676,7 @@ namespace PlanetX_Basic {
         }
         return ""
     }
-    //% block="RFID sensor IIC port write %data to card"
+    //% block="Εγγραφή %data στην κάρτα"
     //% subcategory=Sensor group="IIC Port"
     export function writeData(data: string): void {
         if (NFC_ENABLE === 0) {
@@ -2720,7 +2727,7 @@ namespace PlanetX_Basic {
     }
 
     //% deprecated=true
-    //% blockId="readdht20" block="DHT20 sensor %dht20state value"
+    //% blockId="readdht20" block="Τιμή από αισθητήρα DHT20 %dht20state "
     //% dht20state.fieldEditor="gridpicker"
     //% dht20state.fieldOptions.columns=1
     //% subcategory=Sensor group="IIC Port"
@@ -2754,7 +2761,7 @@ namespace PlanetX_Basic {
     }
 
     //% deprecated=true
-    //% block="joystick sensor %state value"
+    //% block="τιμή από joystick %state"
     //% state.fieldEditor="gridpicker"
     //% state.fieldOptions.columns=2
     //% subcategory=Sensor group="IIC Port"
@@ -2799,7 +2806,7 @@ namespace PlanetX_Basic {
         pin = RJpin_to_analog(Rjpin)
         return pins.analogReadPin(pin)
     }
-    //% blockId=buttonab block="Button %Rjpin %button is pressed"
+    //% blockId=buttonab block="Το Button %button στη %Rjpin είναι πατημένο;"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% button.fieldEditor="gridpicker"
@@ -2843,9 +2850,9 @@ namespace PlanetX_Basic {
     }
 
     export enum ButtonState {
-        //% block="on"
+        //% block="ανοιχτό"
         on = 1,
-        //% block="off"
+        //% block="κλειστό"
         off = 2
     }
 
@@ -2855,7 +2862,7 @@ namespace PlanetX_Basic {
         CD_unpressed: ButtonState.off
     }
 
-    //% block="on button %Rjpin %button pressed"
+    //% block="Στο πάτημα του button %button στη %Rjpin"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% button.fieldEditor="gridpicker"
@@ -2912,7 +2919,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% blockId=fans block="Motor fan %Rjpin toggle to $fanstate || speed %speed \\%"
+    //% blockId=fans block="Εναλλαγή %Rjpin ανεμιστήρα κινητήρα σε $fanstate || ταχύτητα %speed \\%"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% fanstate.shadow="toggleOnOff"
@@ -2945,7 +2952,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% blockId=laserSensor block="Laser %Rjpin toggle to $laserstate"
+    //% blockId=laserSensor block="Εναλλαγή Laser %Rjpin σε $laserstate"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% laserstate.shadow="toggleOnOff"
@@ -2961,7 +2968,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% blockId=magnet block="magnet %Rjpin toggle to $magnetstate"
+    //% blockId=magnet block="Εναλλαγή μαγνήτη %Rjpin σε $magnetstate"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% magnetstate.shadow="toggleOnOff"
@@ -2991,7 +2998,7 @@ namespace PlanetX_Basic {
     }
 
     //% deprecated=true
-    //% blockId=Relay block="Relay %Rjpin toggle to %Relaystate"
+    //% blockId=Relay block="Εναλλαγή ρελέ %Rjpin σε %Relaystate"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% Relaystate.fieldEditor="gridpicker"
@@ -3010,7 +3017,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% blockId="setLoopFolder" block="loop play all the MP3s in the folder:$folderNum"
+    //% blockId="setLoopFolder" block="Αναπαραγωγή όλων των MP3 στον φάκελο:$folderNum"
     //% folderNum.defl="01"
     //% subcategory=Execute group="MP3" color=#EA5532
     export function setLoopFolder(folderNum: string): void {
@@ -3025,7 +3032,7 @@ namespace PlanetX_Basic {
     }
 
     //% blockId="folderPlay" 
-    //% block="play the mp3 in the folder:$folderNum filename:$fileNum || repeatList: $myAns"
+    //% block="Αναπαράγή του mp3 στον φάκελο:$folderNum όνομα αρχείου:$fileNum || repeatList: $myAns"
     //% folderNum.defl="01" fileNum.defl="001"
     //% myAns.shadow="toggleYesNo"
     //% expandableArgumentMode="toggle"
@@ -3044,7 +3051,7 @@ namespace PlanetX_Basic {
     }
 
     //% blockId="setTracking" 
-    //% block="play the mp3 in order of:%tracking || repeatList: $myAns"
+    //% block="Αναπαραγωγή του mp3 με τη σειρά:%tracking || repeatList: $myAns"
     //% myAns.shadow="toggleYesNo"
     //% tracking.defl=1
     //% expandableArgumentMode="toggle"
@@ -3062,7 +3069,7 @@ namespace PlanetX_Basic {
         if (myAns)
             execute(0x19)
     }
-    //% blockId=MP3execute block="Set MP3 execute procedure:%myType"
+    //% blockId=MP3execute block="Ορισμός διαδικασίας εκτέλεσης MP3:%myType"
     //% myType.fieldEditor="gridpicker"
     //% myType.fieldOptions.columns=2
     //% subcategory=Execute group="MP3" color=#EA5532
@@ -3076,7 +3083,7 @@ namespace PlanetX_Basic {
         mp3_checkSum()
         mp3_sendData()
     }
-    //% blockId="setVolume" block="Set volume(0~25):%volume"
+    //% blockId="setVolume" block="Rύθμιση έντασης ήχου(0~25):%volume"
     //% volume.min=0 volume.max=25
     //% subcategory=Execute group="MP3" color=#EA5532
     export function setVolume(volume: number): void {
@@ -3092,7 +3099,7 @@ namespace PlanetX_Basic {
         mp3_checkSum()
         mp3_sendData()
     }
-    //% blockId=MP3setPort block="Set the MP3 port to %Rjpin"
+    //% blockId=MP3setPort block="Ρυθμίστε τη θύρα MP3 σε %Rjpin"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Execute group="MP3" color=#EA5532
@@ -3739,7 +3746,7 @@ namespace PlanetX_Basic {
     }
 
     //% subcategory=Sensor group="Digital" color=#EA5532
-    //% block="value of DS18B20 %state at pin %Rjpin"
+    //% block="τιμή του DS18B20 %state στον ακροδέκτη %Rjpin"
     export function Ds18b20Temp(Rjpin: DigitalRJPin, state: ValType): number {
         let pin = RJpin_to_digital(Rjpin);
         let temperature = celsius(pin);
