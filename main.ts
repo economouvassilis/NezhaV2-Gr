@@ -1849,7 +1849,7 @@ namespace PlanetX_Basic {
         return Math.round(waterlevel)
     }
 
-    //% blockId="readUVLevel" block="Αισθητήρας UV %Rjpin επίπεδο(0~15)"
+    //% blockId="readUVLevel" block="Τιμή από αισθητήρα UV %Rjpin επίπεδο(0~15)"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Sensor color=#E2C438 group="Analog"
@@ -2105,7 +2105,7 @@ namespace PlanetX_Basic {
     //% state.fieldEditor="gridpicker" state.fieldOptions.columns=2
     //% channel.fieldEditor="gridpicker" channel.fieldOptions.columns=4
     //% subcategory=Sensor group="IIC Port"
-    //% block="Trackbit channel %channel is %state"
+    //% block="Το Trackbit κανάλι %channel είναι %state"
     export function TrackbitChannelState(channel: TrackbitChannel, state: TrackbitType): boolean {
         let TempVal: number = 0
         pins.i2cWriteNumber(0x1a, 4, NumberFormat.Int8LE)
@@ -2131,7 +2131,7 @@ namespace PlanetX_Basic {
     //% channel.fieldEditor="gridpicker" channel.fieldOptions.columns=4
     //% detect_target.fieldEditor="gridpicker" detect_target.fieldOptions.columns=2
     //% subcategory=Sensor group="IIC Port"
-    //% block="Trackbit Init_Sensor_Val channel %channel detection target %detect_target value"
+    //% block="(Init_Sensor_Val channel) %channel τιμή στόχου ανίχνευσης Trackbit %detect_target"
     export function Trackbit_Init_Sensor_Val(channel: TrackbitChannel, detect_target: TrackBit_gray): number {
         let Init_Sensor_Val = pins.createBuffer(8)
         pins.i2cWriteNumber(0x1a, 5, NumberFormat.Int8LE)
@@ -2143,7 +2143,7 @@ namespace PlanetX_Basic {
     //% deprecated=true
     //% val.min=0 val.max=255
     //% subcategory=Sensor group="IIC Port"
-    //% block="Set Trackbit learn fail value %val"
+    //% block="Ορισμός τιμής αποτυχίας εκμάθησης Trackbit %val"
     export function Trackbit_learn_fail_value(val: number) {
         pins.i2cWriteNumber(0x1a, 6, NumberFormat.Int8LE)
         pins.i2cWriteNumber(0x1a, val, NumberFormat.Int8LE)
@@ -2154,7 +2154,7 @@ namespace PlanetX_Basic {
     */
     //% sensor_number.fieldEditor="gridpicker" sensor_number.fieldOptions.columns=2
     //% subcategory=Sensor group="IIC Port"
-    //% block="Trackbit sensor offset value"
+    //% block="Τιμή μετατόπισης Trackbit"
     export function TrackBit_get_offset(): number {
         let offset: number
         pins.i2cWriteNumber(0x1a, 5, NumberFormat.Int8LE)
@@ -2167,7 +2167,7 @@ namespace PlanetX_Basic {
     }
 
     //% subcategory=Sensor group="IIC Port"
-    //% block="Get a Trackbit state value"
+    //% block="Τιμή κατάστασης Trackbit"
     export function Trackbit_get_state_value() {
         pins.i2cWriteNumber(0x1a, 4, NumberFormat.Int8LE)
         TrackBit_state_value = pins.i2cReadNumber(0x1a, NumberFormat.UInt8LE, false)
@@ -2324,7 +2324,7 @@ namespace PlanetX_Basic {
 
         }
     }
-    //% block="BME280 sensor IIC port value %state"
+    //% block="Τιμή αισθητήρα BME280 (θύρα IIC) %state"
     //% state.fieldEditor="gridpicker" state.fieldOptions.columns=1
     //% subcategory=Sensor  group="IIC Port"
     export function bme280Sensor(state: BME280_state): number {
@@ -2420,7 +2420,7 @@ namespace PlanetX_Basic {
     const gestureEventId = 3100;
     let lastGesture = GestureType.None;
     let paj7620 = new PAJ7620();
-    //% blockId= gesture_create_event block="Η θύρα IIC του αισθητήρα χειρονομίας είναι %gesture"
+    //% blockId= gesture_create_event block="Η τιμή του αισθητήρα χειρονομίας (θύρα IIC) είναι %gesture"
     //% gesture.fieldEditor="gridpicker" gesture.fieldOptions.columns=3
     //% subcategory=Sensor group="IIC Port"
     export function onGesture(gesture: GestureType, handler: () => void) {
@@ -2471,7 +2471,7 @@ namespace PlanetX_Basic {
         }
         return Math.round(retemp * 100) / 100
     }
-    //% blockId=apds9960_readcolor block="Χρώμα από αισθητήρα χρώματος στη θύρα IIC HUE(0~360)"
+    //% blockId=apds9960_readcolor block="Τιμή HUE από αισθητήρα χρώματος (θύρα IIC) (0~360)"
     //% subcategory=Sensor group="IIC Port"
     export function readColor(): number {
         let buf = pins.createBuffer(2)
@@ -2638,7 +2638,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% block="Ο αισθητήρα; RFID διαβάζει δεδομένα από την κάρτα στη Θύρα IIC"
+    //% block="Ο αισθητήρας RFID διαβάζει δεδομένα από την κάρτα στη Θύρα IIC;"
     //% subcategory=Sensor group="IIC Port"
     export function readDataBlock(): string {
         if (NFC_ENABLE === 0) {
@@ -2700,7 +2700,7 @@ namespace PlanetX_Basic {
         }
         writeblock(blockData);
     }
-    //% block="RFID sensor IIC port Detect Card"
+    //% block="Ανίχνευση από αισθητήρα RFID στη Θύρα IIC"
     //% subcategory=Sensor group="IIC Port"
     export function checkCard(): boolean {
         if (NFC_ENABLE === 0) {
@@ -3022,7 +3022,7 @@ namespace PlanetX_Basic {
         }
     }
 
-    //% blockId="setLoopFolder" block="Αναπαραγωγή όλων των MP3 στον φάκελο:$folderNum"
+    //% blockId="setLoopFolder" block="Αναπαραγωγή όλων των mp3 στον φάκελο:$folderNum"
     //% folderNum.defl="01"
     //% subcategory=Execute group="MP3" color=#EA5532
     export function setLoopFolder(folderNum: string): void {
@@ -3088,7 +3088,7 @@ namespace PlanetX_Basic {
         mp3_checkSum()
         mp3_sendData()
     }
-    //% blockId="setVolume" block="Rύθμιση έντασης ήχου(0~25):%volume"
+    //% blockId="setVolume" block="Rύθμιση έντασης ήχου (0~25):%volume"
     //% volume.min=0 volume.max=25
     //% subcategory=Execute group="MP3" color=#EA5532
     export function setVolume(volume: number): void {
@@ -3104,7 +3104,7 @@ namespace PlanetX_Basic {
         mp3_checkSum()
         mp3_sendData()
     }
-    //% blockId=MP3setPort block="Ρυθμίστε τη θύρα MP3 σε %Rjpin"
+    //% blockId=MP3setPort block="Ορισμός της θύρας MP3 σε %Rjpin"
     //% Rjpin.fieldEditor="gridpicker"
     //% Rjpin.fieldOptions.columns=2
     //% subcategory=Execute group="MP3" color=#EA5532
@@ -4252,7 +4252,7 @@ namespace PlanetX_Display {
         }
         showUserText(line, "" + n)
     }
-    //% block="clear display" color=#00B1ED
+    //% block="Καθαρισμός οθόνης OLED" color=#00B1ED
     //% subcategory=Display group="OLED"
     export function oledClear() {
         //oledcmd(DISPLAY_OFF);   //display off
@@ -4588,7 +4588,7 @@ namespace PlanetX_Display {
          * @param length number of LEDs in the range. eg: 4
          */
         //% weight=89 color=#EA5532
-        //% blockId="neopixel_range" block="%strip|range from %start|with %length|leds"
+        //% blockId="neopixel_range" block="%strip|range από %start|with %length|leds"
         //% parts="neopixel"
         //% blockSetVariable=range subcategory=Neopixel
         range(start: number, length: number): Strip {
